@@ -13,8 +13,8 @@ import lombok.Data;
 public class Cart extends BaseEntity{
 
 	@Column(name = "user_id" )
-	private Users userId ;  
+	private Long userId ;  
 	@Column(name ="product_id")
-	private Product productId ; 
-	private int quantity ; 
+	private Long productId ; 
+	private Integer quantity ; 
 }

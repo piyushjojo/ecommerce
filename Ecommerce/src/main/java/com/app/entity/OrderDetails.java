@@ -21,8 +21,8 @@ public class OrderDetails extends BaseEntity{
 	@JoinColumn(name = "product_id", referencedColumnName = "id")
 	private Product productId ; 
 	@Column(name = "product_price")
-	private double productPriceAtOrder ; 
-	private int quantity  ; 
+	private Double productPriceAtOrder ; 
+	private Integer quantity  ; 
 	@Column(name = "order_time_stamp")
 	private LocalDateTime orderPlacedAt ;
 	

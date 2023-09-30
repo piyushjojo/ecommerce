@@ -19,7 +19,7 @@ public class Orders extends BaseEntity {
 	@JoinColumn(name ="user_id", referencedColumnName = "id")
 	private Users userId ; 
 	@Column(name = "order_amount")
-	private double totalOrderAmount ;
+	private Double totalOrderAmount ;
 	@OneToOne
 	@JoinColumn(name = "payment_id" , referencedColumnName = "id")
 	private Payment paymentId ; 

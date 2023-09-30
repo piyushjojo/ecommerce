@@ -17,16 +17,15 @@ public class Product extends BaseEntity{
 	@Column(name = "product_desc")
 	private String productDescription ;
 	@Column (name = "product_price")
-	private double productPrice ;
+	private Double productPrice ;
 	@ManyToOne
 	@JoinColumn(name = "product_cat_id", referencedColumnName = "id")
 	private ProductCategory productCategoryId ; 
 	@ManyToOne
 	@JoinColumn(name = "product_inv_id", referencedColumnName = "id")
 	private ProductInventory productInventoryId ; 
-	@ManyToOne
-	@JoinColumn(name = "seller_id", referencedColumnName = "id")
-	private Users sellerId ;
+	@Column(name = "seller_id")
+	private Long sellerId ;
 	@Column(name = "display_picture_path")
 	private String displayPicturePath ; 
 	

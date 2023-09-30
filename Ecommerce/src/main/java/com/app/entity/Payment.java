@@ -20,7 +20,7 @@ public class Payment extends BaseEntity {
 	@JoinColumn(name = "order_id", referencedColumnName = "id")
 	private Orders orderId ; 
 	@Column(name="order_amount")
-	private double totalOrderAmount ;
+	private Double totalOrderAmount ;
 	@Enumerated(EnumType.STRING)
 	@Column(name = "payment_method")
 	private PaymentMethod paymentMethod ;
