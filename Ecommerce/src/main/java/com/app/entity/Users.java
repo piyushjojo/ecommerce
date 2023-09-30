@@ -3,12 +3,14 @@ package com.app.entity;
 import java.time.LocalDate;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
+@Entity
 @Data
 @Table(name = "users")
 public class Users extends BaseEntity {
