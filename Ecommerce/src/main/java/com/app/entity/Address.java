@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class Address extends BaseEntity{
 
 	@ManyToOne
-	@JoinColumn(name = "user_id")
+	@JoinColumn(name = "user_id", referencedColumnName = "id")
 	private Users userId ; 
 	private String street; 
 	private String city ; 
