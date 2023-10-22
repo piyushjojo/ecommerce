@@ -3,11 +3,14 @@ package com.app.entity;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
@@ -15,7 +18,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "users")
+@Table(name = "user_info")
 public class Users extends BaseEntity {
 	
 	@Column(name = "username")
@@ -24,8 +27,6 @@ public class Users extends BaseEntity {
 	
 	@NotBlank(message = "Email is required.")
 	private String email ; 
-	@NotBlank(message = "Password is required.")
-	private String password ; 
 	
 	@Column(name = "first_name")
 	@NotBlank(message = "First Name is required.")
@@ -39,12 +40,11 @@ public class Users extends BaseEntity {
 	private String lastName ; 
 	
 	@Enumerated(EnumType.STRING)
-	@NotBlank(message = "Gender is required.")
 	private Gender gender ; 
 	
 	@Enumerated(EnumType.STRING)
-	@NotBlank(message = "Gender is required.")
 	private UserRole role ; 
+	
 	private LocalDate dob ; 
 	
 	@NotBlank(message = "Phone No is required.")
@@ -56,6 +56,6 @@ public class Users extends BaseEntity {
 	@Column(name = "display_picture_path")
 	private String displayPicturePath ; 
 	
-	@OneToMany(mappedBy = "userId", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Address> addresses;
 }
